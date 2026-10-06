@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /content/
+Disallow: /build_blog.py
+Disallow: /shrink.py
+Disallow: /LEEME.md
+
+Sitemap: https://angelicadaona.com.ar/sitemap.xml
