@@ -103,6 +103,15 @@ arts = sorted((lee(f) for f in glob.glob(SRC + '/*.md')), key=lambda a: a['fecha
 arts = [a for a in arts if a['fecha'] <= date.today().isoformat() or os.environ.get('VER_FUTUROS')]   # fecha futura = programado
 shutil.rmtree(OUT, ignore_errors=True); os.makedirs(OUT)
 if os.path.isdir(SRC + '/img'): shutil.copytree(SRC + '/img', OUT + '/img')
+# fotos sueltas: cualquier imagen puesta junto al .md también se publica
+for f in glob.glob(SRC + '/*.*'):
+    if f.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
+        os.makedirs(OUT + '/img', exist_ok=True); shutil.copy(f, OUT + '/img/' + os.path.basename(f))
+def _hay(n): return os.path.isfile(OUT + '/img/' + n)
+for a in arts:   # si falta la foto indicada, busca una con el mismo nombre que el artículo; si no hay, publica sin foto (nunca queda rota)
+    n = a.get('imagen', '')
+    if not (n and _hay(n)):
+        a['imagen'] = next((s for s in (a['slug'] + e for e in ('.jpg', '.jpeg', '.png', '.webp')) if _hay(s)), '')
 def og_de(a): return f'{DOMINIO}/blog/img/{a["imagen"]}' if a.get('imagen') else f'{DOMINIO}/share-index.jpg'
 def tarjeta(a, p=''):
     img = f'<img src="blog/img/{esc(a["imagen"])}" alt="{esc(a.get("alt",""))}" width="1200" height="630" loading="lazy">' if a.get('imagen') else ''
