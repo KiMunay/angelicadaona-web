@@ -7,7 +7,7 @@ imagen: como-atraer-huespedes-alojamiento.jpg
 alt: Una mano sostiene un celular que muestra la ficha de un alojamiento, en una galería con plantas y luz de atardecer
 categoria: Que te encuentren
 ---
-**La respuesta corta:** para atraer huéspedes a un alojamiento, lo primero es que te encuentren donde ya están buscando: Google, Instagram y TikTok. Después, que al encontrarte entiendan en segundos por qué elegirte y cómo escribirte. Atraer no es publicar más, es que cada lugar donde aparecés cuente lo mismo y facilite el siguiente paso.
+Para atraer huéspedes a un alojamiento, lo primero es que te encuentren donde ya están buscando: Google, Instagram y TikTok. Después, que al encontrarte entiendan en segundos por qué elegirte y cómo escribirte. Atraer no es publicar más, es que cada lugar donde aparecés cuente lo mismo y facilite el siguiente paso.
 
 ## Dónde buscan hoy los huéspedes
 
